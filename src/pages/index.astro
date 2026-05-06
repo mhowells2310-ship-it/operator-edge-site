@@ -1,0 +1,603 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// =====================================================================
+// 2 JUNE 2026 SWAP ZONE
+// On 2 June 2026 the page flips from waitlist mode (PHASE A)
+// to application mode (PHASE B). Edit the three constants below
+// and redeploy. Then complete the manual edits listed underneath.
+// =====================================================================
+
+const FORM_URL = "https://[GHL-WAITLIST-FORM-URL]";
+const CTA_TEXT = "Join the Cohort 1 waiting list";
+const HERO_EYEBROW = "COHORT 1 · APPLICATIONS OPEN 2 JUNE 2026";
+
+// 2 JUNE 2026 SWAP VALUES (replace the three constants above):
+//   const FORM_URL = "https://[GHL-APPLICATION-FORM-URL]";
+//   const CTA_TEXT = "Apply for Cohort 1";
+//   const HERO_EYEBROW = "COHORT 1 · APPLICATIONS NOW OPEN";
+//
+// PHASE B MANUAL EDITS (search the file for the markers):
+//   [PHASE_B_HOW_IT_WORKS] in section 8: delete the waitlist step
+//     (current step 1) and renumber the rest. Add the new step 1:
+//     "Apply. The application form takes about ten minutes. It asks
+//      who you are, what your business does, where you are stuck,
+//      and what success looks like. Honest answers are more useful
+//      than impressive ones."
+//   [PHASE_B_FAQ] in section 10: delete the FAQ item titled
+//      "What does joining the waiting list actually do?".
+//   [PHASE_B_FINAL_CTA] in section 11: change headline to
+//      "Cohort 1. Twelve places. Apply." Replace sub with
+//      "Twelve weeks. The Referral Engine, taught from twelve years
+//      of practice. Application takes ten minutes."
+//      Drop the "Waiting list gets first access" subtext line.
+// =====================================================================
+---
+
+<Layout>
+  <!-- ============================================================ -->
+  <!-- HEADER                                                       -->
+  <!-- ============================================================ -->
+  <header class="sticky top-0 z-40 bg-paper/85 backdrop-blur border-b border-ink/5">
+    <div class="container-page flex items-center justify-between py-4 px-5 md:px-8">
+      <a href="#top" class="flex items-center gap-2.5">
+        <span class="relative inline-flex">
+          <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="13" fill="#FF5C3A" />
+            <circle cx="16" cy="16" r="5" fill="#FFFFFF" />
+            <circle cx="25" cy="9" r="3.5" fill="#FFB547" />
+          </svg>
+        </span>
+        <span class="font-display font-extrabold text-ink text-[1.05rem] tracking-tight">
+          The Operator Edge<span class="text-coral">.</span>
+        </span>
+      </a>
+      <a href={FORM_URL} class="cta-pill hidden sm:inline-flex" style="padding: 0.7rem 1.1rem; font-size: 0.9rem;">
+        {CTA_TEXT}
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============================================================ -->
+    <!-- SECTION 1 · HERO (Option B, A substitute for luck)          -->
+    <!-- ============================================================ -->
+    <section class="section relative overflow-hidden">
+      <!-- Soft brand-tinted background wash -->
+      <div class="absolute inset-0 -z-10 bg-paper"></div>
+      <div class="absolute -top-32 -right-24 -z-10 w-[28rem] h-[28rem] rounded-full bg-coral/10 blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-32 -z-10 w-[26rem] h-[26rem] rounded-full bg-amber/15 blur-3xl"></div>
+
+      <div class="container-page">
+        <div class="max-w-3xl">
+          <span class="dot-trio mb-7" aria-hidden="true">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </span>
+          <p class="eyebrow eyebrow-amber mb-4 sm:mb-5">{HERO_EYEBROW}</p>
+          <h1 class="headline text-balance text-[3.25rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[6.5rem] mb-6">
+            A substitute for <span class="headline-coral">luck.</span>
+          </h1>
+          <p class="text-pretty text-[1.125rem] sm:text-[1.25rem] leading-[1.55] text-ink-soft max-w-2xl mb-9">
+            The Referral Programme is a 12-week programme from The Operator Edge that teaches owner-led service businesses how to build a predictable referral pipeline. The Referral Engine behind £1.6m in commissions and 50+ active partners over six years on my own, refined across twelve years of practice, now taught.
+          </p>
+          <a href={FORM_URL} class="cta-pill">
+            {CTA_TEXT}
+            <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <p class="mt-5 text-sm text-ink-soft">
+            Cohort 1 capped at 12 places. Waiting list gets first access.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2 · ABOVE-THE-FOLD PROOF BAR                        -->
+    <!-- ============================================================ -->
+    <section class="bg-tile">
+      <div class="container-page px-5 md:px-8 py-12 md:py-14">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6">
+          <div>
+            <div class="font-display font-extrabold tracking-tight text-coral text-[2.5rem] sm:text-[3rem] leading-none mb-2">£1.6m</div>
+            <div class="text-sm text-ink-soft leading-snug max-w-[20ch]">in commissions through referral partners, over six years on my own</div>
+          </div>
+          <div>
+            <div class="font-display font-extrabold tracking-tight text-coral text-[2.5rem] sm:text-[3rem] leading-none mb-2">50+</div>
+            <div class="text-sm text-ink-soft leading-snug max-w-[18ch]">active referral partner relationships</div>
+          </div>
+          <div>
+            <div class="font-display font-extrabold tracking-tight text-coral text-[2.5rem] sm:text-[3rem] leading-none mb-2">12 years</div>
+            <div class="text-sm text-ink-soft leading-snug max-w-[18ch]">of refinement, in practice</div>
+          </div>
+          <div>
+            <div class="font-display font-extrabold tracking-tight text-coral text-[2.5rem] sm:text-[3rem] leading-none mb-2">Zero</div>
+            <div class="text-sm text-ink-soft leading-snug max-w-[18ch]">spent on cold outreach</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3 · THE PROBLEM (Hiding in plain sight)              -->
+    <!-- ============================================================ -->
+    <section class="section bg-paper">
+      <div class="container-page">
+        <div class="max-w-3xl">
+          <p class="eyebrow eyebrow-amber mb-4">THE PATTERN</p>
+          <h2 class="headline text-balance text-[2.5rem] sm:text-[3.25rem] md:text-[4rem] mb-8">
+            Hiding in <span class="headline-coral">plain sight.</span>
+          </h2>
+          <div class="space-y-5 text-[1.0625rem] sm:text-[1.125rem] leading-[1.65] text-ink-soft text-pretty">
+            <p>Most growth advice for service businesses asks you to do something uncomfortable. Cold email. Cold DMs. LinkedIn outreach. Paid ads. SEO content treadmills.</p>
+            <p>You&rsquo;ve tried it. You know how it goes. Reply rates collapse, cost-per-lead climbs, and the brand grinds down with every &ldquo;just following up&rdquo; message that goes nowhere.</p>
+            <p class="text-ink font-medium">Meanwhile, every trust-based business in the country quietly grows the same way it always has.</p>
+          </div>
+
+          <ul class="list-coral mt-8 mb-10 text-[1.0625rem] sm:text-[1.125rem] leading-[1.55] text-ink">
+            <li>Doctors refer patients to specialists.</li>
+            <li>Solicitors refer clients to barristers.</li>
+            <li>Estate agents introduce buyers to mortgage brokers.</li>
+            <li>Accountants introduce business owners to wealth managers.</li>
+            <li>Hairdressers refer to colourists.</li>
+            <li>Dentists refer to orthodontists.</li>
+            <li>Architects refer to structural engineers.</li>
+          </ul>
+
+          <div class="space-y-5 text-[1.0625rem] sm:text-[1.125rem] leading-[1.65] text-ink-soft text-pretty">
+            <p>The whole professional services economy runs on it. It has done for centuries.</p>
+            <p>It is so familiar that no one names it as a system. The same engine, in different costumes, dressed differently for the modern internet: Amazon affiliates. Brand ambassadors. Recruitment referral fees. SaaS partner programmes. Vogue&rsquo;s #gifted economy. Every time someone with trusted access to an audience introduces a service or product into that audience, the engine is running.</p>
+            <p class="text-ink font-medium">Every trust business runs on this engine. Most just never engineered theirs deliberately.</p>
+            <p class="font-display font-extrabold text-ink text-[1.5rem] sm:text-[1.875rem] tracking-tight pt-3">
+              That&rsquo;s the <span class="text-coral">gap.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4 · THE MECHANISM (The Referral Engine)              -->
+    <!-- ============================================================ -->
+    <section class="section bg-tile">
+      <div class="container-page">
+        <div class="max-w-3xl mb-10 md:mb-14">
+          <p class="eyebrow eyebrow-amber mb-4">THE METHOD</p>
+          <h2 class="headline text-balance text-[2.5rem] sm:text-[3.25rem] md:text-[4rem] mb-6">
+            The Referral <span class="headline-coral">Engine.</span>
+          </h2>
+          <p class="text-[1.25rem] sm:text-[1.5rem] font-display font-bold text-ink mb-6 leading-tight tracking-tight">
+            Five steps. Twelve years to build. Twelve weeks to teach.
+          </p>
+          <p class="text-[1.0625rem] sm:text-[1.125rem] leading-[1.65] text-ink-soft text-pretty">
+            The Referral Engine is the named method behind every cohort of The Referral Programme. It&rsquo;s how you turn the engine that&rsquo;s already running everywhere into one you operate on purpose, in your own market, with your own trust capital.
+          </p>
+        </div>
+
+        <ol class="grid gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              n: "01",
+              t: "Identify the right referral partners.",
+              b: "Not networking, not “warm intros.” A specific commercial relationship with the people already speaking to your future clients at the trigger moment.",
+            },
+            {
+              n: "02",
+              t: "Position yourself correctly.",
+              b: "How you show up before, during, and after a referral conversation is the difference between being recommended and being mentioned. There is a structural way to do this; it isn’t personality-based.",
+            },
+            {
+              n: "03",
+              t: "Build relationships.",
+              b: "Most referral partnerships die in the gap between “good chat” and “first referral.” This module exists because that gap is engineerable, not down to luck or chemistry.",
+            },
+            {
+              n: "04",
+              t: "Activate referrals.",
+              b: "Signed agreements don’t generate referrals. Specific behaviours do. Some are commercial; others, surprisingly, are not.",
+            },
+            {
+              n: "05",
+              t: "Systemise and scale.",
+              b: "What runs on instinct in your first three relationships needs to run on a system by your tenth. The programme delivers a Notion-based operating system that does this for you.",
+            },
+          ].map((step) => (
+            <li class="card flex flex-col gap-3 bg-paper border border-ink/5">
+              <div class="flex items-baseline gap-3">
+                <span class="font-display font-extrabold text-coral text-[1.625rem] tracking-tight">{step.n}</span>
+                <span class="dot bg-amber" aria-hidden="true" style="background: var(--color-amber);"></span>
+              </div>
+              <h3 class="font-display font-extrabold text-ink text-[1.15rem] tracking-tight leading-snug" set:html={step.t}></h3>
+              <p class="text-[0.975rem] leading-[1.6] text-ink-soft text-pretty" set:html={step.b}></p>
+            </li>
+          ))}
+        </ol>
+
+        <p class="max-w-3xl mt-10 md:mt-14 text-[0.975rem] sm:text-[1rem] leading-[1.65] text-ink-soft italic text-pretty">
+          The model is universal across trust-based service categories. The proof anchors in financial services because that&rsquo;s where it was built; the application is anywhere it works.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 5 · THE PROOF (numbers, case studies, testimonials)  -->
+    <!-- ============================================================ -->
+    <section class="section bg-paper">
+      <div class="container-page">
+        <div class="max-w-3xl mb-12">
+          <p class="eyebrow eyebrow-amber mb-4">THE EVIDENCE</p>
+          <h2 class="headline text-balance text-[2.5rem] sm:text-[3.25rem] md:text-[4rem] mb-6">
+            Twelve years of practice. Numbers that <span class="headline-coral">hold up.</span>
+          </h2>
+          <p class="text-[1.0625rem] sm:text-[1.125rem] leading-[1.65] text-ink-soft text-pretty">
+            The Referral Programme isn&rsquo;t a theoretical course. It teaches the playbook I&rsquo;ve been running since 2014 in private medical insurance, one of the most cynical, regulated, and fee-allergic markets in the UK. Two case studies, then two people who actually refer to me.
+          </p>
+        </div>
+
+        <!-- Case studies -->
+        <div class="grid gap-6 md:grid-cols-2 mb-14 md:mb-20">
+          <article class="card bg-tile border border-ink/5">
+            <p class="eyebrow eyebrow-teal mb-3" style="color: var(--color-teal);">CASE STUDY 1</p>
+            <h3 class="font-display font-extrabold text-ink text-[1.4rem] sm:text-[1.5rem] tracking-tight leading-snug mb-4">
+              Engineered <span class="text-coral">partnership.</span>
+            </h3>
+            <p class="text-[1rem] leading-[1.65] text-ink-soft text-pretty">
+              A general insurance broker I now consider one of my closest friends. Introduced through my accountant, structured as a fair income split, the relationship has been nurtured through golf, dinners, and reciprocal value over a decade. The override structure built into the agreement means he&rsquo;s incentivised to introduce me to other potential referral partners, and he has done. Every part of this was deliberate. None of it was networking.
+            </p>
+          </article>
+          <article class="card bg-tile border border-ink/5">
+            <p class="eyebrow eyebrow-teal mb-3" style="color: var(--color-teal);">CASE STUDY 2</p>
+            <h3 class="font-display font-extrabold text-ink text-[1.4rem] sm:text-[1.5rem] tracking-tight leading-snug mb-4">
+              Zero commission, sustained <span class="text-coral">referrals.</span>
+            </h3>
+            <p class="text-[1rem] leading-[1.65] text-ink-soft text-pretty">
+              A PA I met when we were both starting out. She&rsquo;s now built that into a firm with twenty-five PAs serving ultra-high-net-worth individuals, including names you would recognise. Over the relationship&rsquo;s lifetime she&rsquo;s generated more than £200,000 in income for me. She has never once taken a commission, override, or fee. She refers because the outcomes are good and the service standards match her clients&rsquo;. This is the proof that the engine isn&rsquo;t financial; it&rsquo;s reciprocal value, of which money is sometimes one component and never the engine.
+            </p>
+          </article>
+        </div>
+
+        <!-- Testimonials header -->
+        <div class="max-w-3xl mb-8 md:mb-10">
+          <h3 class="font-display font-extrabold text-ink text-[1.625rem] sm:text-[2rem] tracking-tight leading-tight">
+            What people who actually refer to me <span class="text-coral">say.</span>
+          </h3>
+        </div>
+
+        <!-- Testimonials grid (cream-on-cream style). Narrower container so cards read smaller on the page. -->
+        <div class="max-w-[58rem] mx-auto grid gap-6 md:gap-7 md:grid-cols-2">
+
+          <!-- Testimonial 1 -->
+          <figure class="card-cream">
+            <span class="quote-mark text-[5rem] block leading-none mb-1" aria-hidden="true">&ldquo;</span>
+            <blockquote class="testimonial-body">
+              <p>Matt is our go-to for all our own and our clients&rsquo; private medical needs. Over my career I have worked with numerous private medical experts, but Matt&rsquo;s knowledge of products and the market is unrivalled.</p>
+              <p>Above all, I feel 100% confident recommending our clients to Matt because his honesty and integrity shine through in abundance, and he always has the client&rsquo;s best interests as his number one priority.</p>
+            </blockquote>
+            <div class="text-right -mt-2">
+              <span class="quote-mark text-[5rem] inline-block leading-none" aria-hidden="true">&rdquo;</span>
+            </div>
+            <div class="attr-divider"></div>
+            <figcaption class="flex items-center gap-3.5">
+              <span class="attr-avatar">RC</span>
+              <span>
+                <span class="block attr-name">Robert C.</span>
+                <span class="block attr-role">Director, Head of Growth / Chartered Financial Planner</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <!-- Testimonial 2 -->
+          <figure class="card-cream">
+            <span class="quote-mark text-[5rem] block leading-none mb-1" aria-hidden="true">&ldquo;</span>
+            <blockquote class="testimonial-body">
+              <p>At annabel, it&rsquo;s essential that we only refer our clients to third parties we trust implicitly, those who offer a highly personal, practical and cost-conscious service. Healthcare cover can often feel complex and overwhelming, but Matt Howells and his team at Vizion consistently go above and beyond to make the process clear and manageable. Matt has been a preferred supplier of annabel for over 10 years, and his expertise, responsiveness and genuine care mean our clients always feel informed, supported and, most importantly, appropriately insured.</p>
+            </blockquote>
+            <div class="text-right -mt-2">
+              <span class="quote-mark text-[5rem] inline-block leading-none" aria-hidden="true">&rdquo;</span>
+            </div>
+            <div class="attr-divider"></div>
+            <figcaption class="flex items-center gap-3.5">
+              <span class="attr-avatar">AB</span>
+              <span>
+                <span class="block attr-name">Annabel B.</span>
+              </span>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 6 · THE PROGRAMME                                    -->
+    <!-- ============================================================ -->
+    <section class="section bg-tile">
+      <div class="container-page">
+        <div class="max-w-3xl mb-10 md:mb-14">
+          <p class="eyebrow eyebrow-amber mb-4">THE PROGRAMME</p>
+          <h2 class="headline text-balance text-[2.5rem] sm:text-[3.25rem] md:text-[4rem] mb-6">
+            Twelve weeks. Six modules. One <span class="headline-coral">operating system.</span>
+          </h2>
+          <p class="text-[1.25rem] sm:text-[1.5rem] font-display font-bold text-ink mb-6 leading-tight tracking-tight text-pretty">
+            A working pipeline by week twelve. Not a finished course you watch and shelve.
+          </p>
+          <p class="text-[1.0625rem] sm:text-[1.125rem] leading-[1.65] text-ink-soft text-pretty">
+            The Referral Programme is built around real-world implementation, not consumption. By the end of week twelve you have an operating system, a partnership map, signed agreements, and a working pipeline. Not knowledge. Infrastructure.
+          </p>
+        </div>
+
+        <!-- Six modules -->
+        <div class="bg-paper rounded-3xl border border-ink/5 p-6 md:p-10 mb-10">
+          <h3 class="font-display font-extrabold text-ink text-[1.25rem] tracking-tight mb-2">The six modules</h3>
+          <div class="mt-3">
+            {[
+              { n: "Module 1", w: "Weeks 1–2", t: "Foundations.", b: "Are you actually referable? A diagnostic that most service businesses fail the first time they take it honestly." },
+              { n: "Module 2", w: "Weeks 3–4", t: "The Partnership Map.", b: "Identifying who is speaking to your client at the trigger moment. The output is your live partnership map for the next twelve months." },
+              { n: "Module 3", w: "Weeks 5–6", t: "Approach & Positioning.", b: "How to present yourself so referral partners want to refer. Scripts, frames, mistakes to avoid." },
+              { n: "Module 4", w: "Weeks 7–8", t: "The Commercial Structure.", b: "Income splits, override structures, agreements. Reading partner motivation. When money is part of it and when it isn’t." },
+              { n: "Module 5", w: "Weeks 9–10", t: "Relationship Building.", b: "Turning a signed agreement into actual referrals. Where most partnerships die." },
+              { n: "Module 6", w: "Weeks 11–12", t: "The System.", b: "A Notion-based operating system you’ll have built across the previous five modules, formalised here and ready to scale." },
+            ].map((m) => (
+              <div class="module-row">
+                <div>
+                  <div class="module-num">{m.n}</div>
+                  <div class="text-xs text-ink-soft tracking-wide mt-0.5" set:html={m.w}></div>
+                </div>
+                <div>
+                  <h4 class="font-display font-extrabold text-ink text-[1.1rem] tracking-tight leading-snug mb-1.5" set:html={m.t}></h4>
+                  <p class="text-[0.975rem] leading-[1.6] text-ink-soft text-pretty" set:html={m.b}></p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Inside the cohort + What it asks of you -->
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="bg-paper rounded-3xl border border-ink/5 p-6 md:p-8">
+            <h3 class="font-display font-extrabold text-ink text-[1.25rem] tracking-tight mb-4">
+              Inside the cohort
+            </h3>
+            <ul class="list-coral text-[0.975rem] leading-[1.55] text-ink">
+              <li>Six modules of structured teaching content (video, written lessons, exercises, templates)</li>
+              <li>A weekly live group coaching call across all twelve weeks</li>
+              <li>Two 1:1 check-ins with me at milestone points in the programme</li>
+              <li>Peer accountability pods inside Skool, deliberately cross-vertical so cohort members become each other&rsquo;s referral partners once the programme ends</li>
+              <li>A complete Notion operating system, yours to keep</li>
+              <li>Lifetime access to all programme materials</li>
+              <li>One month of The Operator Network included with the cohort fee, then optional monthly subscription to stay inside an active network of programme alumni building referral partnerships in their respective markets</li>
+            </ul>
+          </div>
+          <div class="bg-paper rounded-3xl border border-ink/5 p-6 md:p-8">
+            <h3 class="font-display font-extrabold text-ink text-[1.25rem] tracking-tight mb-4">
+              What it asks of you
+            </h3>
+            <p class="text-[1rem] leading-[1.65] text-ink-soft text-pretty">
+              Sixty to ninety hours of engaged work across twelve weeks. Roughly five to seven hours a week. That&rsquo;s a real commitment, and the programme is built to be incompatible with skimming. Lessons require evidence and outputs, not just completion clicks. Members come out of the programme with a working system, not a watched course.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 7 · WHO IT'S FOR                                     -->
+    <!-- ============================================================ -->
+    <section class="section bg-paper">
+      <div class="container-page">
+        <div class="max-w-3xl mb-10">
+          <h2 class="headline text-balance text-[2.5rem] sm:text-[3.25rem] md:text-[4rem] mb-6">
+            Who this is <span class="headline-coral">for.</span>
+          </h2>
+          <div class="space-y-5 text-[1.0625rem] sm:text-[1.125rem] leading-[1.65] text-ink-soft text-pretty">
+            <p>The Operator Edge is for owner-led, trust-based service professionals at least two years into running their own business. The model needs existing clients and an established service offering to compound on.</p>
+            <p>It works across categories: IFAs, mortgage brokers, recruitment consultants, agency owners, architects, private chefs, wedding planners, design studios, business consultants, established coaches, private clinic owners, trades and construction firm owners, and similar.</p>
+            <p>The cohort is deliberately cross-vertical. By design, your cohort isn&rsquo;t twelve copies of you. It&rsquo;s twelve owner-operators in adjacent trust businesses, which means by the end of the programme you&rsquo;ve spent twelve weeks alongside people who could become your actual referral partners.</p>
+          </div>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 mt-12">
+          <div class="rounded-3xl bg-tile p-6 md:p-8 border border-ink/5">
+            <h3 class="flex items-center gap-2 font-display font-extrabold text-ink text-[1.25rem] tracking-tight mb-4">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-coral text-paper">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              The right fit
+            </h3>
+            <ul class="list-coral text-[1rem] leading-[1.55] text-ink">
+              <li>Owner-led, trust-based service professionals</li>
+              <li>At least two years into running your own business</li>
+              <li>Existing clients and an established service offering</li>
+              <li>Open to a cross-vertical cohort of twelve operators</li>
+              <li>Five to seven hours a week, for twelve weeks</li>
+            </ul>
+          </div>
+
+          <div class="rounded-3xl bg-tile p-6 md:p-8 border border-ink/5">
+            <h3 class="flex items-center gap-2 font-display font-extrabold text-ink text-[1.25rem] tracking-tight mb-4">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-ink/10 text-ink-soft">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+                </svg>
+              </span>
+              Who this is not for
+            </h3>
+            <ul class="list-grey text-[1rem] leading-[1.55]">
+              <li>Employees looking to build a side hustle</li>
+              <li>Anyone in their first year of self-employment</li>
+              <li>Product or e-commerce businesses</li>
+              <li>Anyone looking for &ldquo;ten leads a day from cold DMs&rdquo; tactics</li>
+              <li>Direct PMI brokers (conflict of interest with my own market)</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="max-w-3xl mt-10 text-[1rem] sm:text-[1.0625rem] leading-[1.65] text-ink-soft italic text-pretty">
+          If any of those is you, this programme isn&rsquo;t a fit. The application form filters at this layer; we don&rsquo;t take a sales call with anyone we can&rsquo;t actually help.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 8 · HOW IT WORKS  [PHASE_B_HOW_IT_WORKS marker]      -->
+    <!-- ============================================================ -->
+    <section class="section bg-tile">
+      <div class="container-page">
+        <div class="max-w-3xl mb-10 md:mb-12">
+          <h2 class="headline text-balance text-[2.5rem] sm:text-[3.25rem] md:text-[4rem] mb-6">
+            How it <span class="headline-coral">works.</span>
+          </h2>
+        </div>
+
+        <ol class="grid gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          {[
+            { n: "01", t: "Join the waiting list.", b: "A short form, two minutes. It tells me a bit about you and your business so I can prepare for the application stage. Waitlist members get first access when applications open." },
+            { n: "02", t: "Applications open 2 June 2026.", b: "You’ll get a direct link in your inbox. About five minutes to complete, with deeper questions about what you’re trying to build." },
+            { n: "03", t: "We review.", b: "I read every application personally. If we can help, you get an invitation to book a thirty-minute conversation. If we can’t, we tell you why, and where you might be better served instead." },
+            { n: "04", t: "The conversation.", b: "A real conversation, not a pitch. We talk about what you’re trying to build, what’s been getting in the way, and whether the programme is the right move for you right now. Pricing and dates are covered here." },
+            { n: "05", t: "Cohort.", b: "If we both agree the fit is right, you join the cohort. Cohort 1 is capped at twelve places, opens 2 June 2026 for applications, and runs for twelve weeks from the cohort start date." },
+          ].map((s) => (
+            <li class="bg-paper border border-ink/5 rounded-3xl p-5 md:p-6 flex flex-col gap-3">
+              <div class="flex items-center gap-2.5">
+                <span class="font-display font-extrabold text-coral text-[1.5rem] tracking-tight">{s.n}</span>
+                <span class="block w-1.5 h-1.5 rounded-full bg-amber" aria-hidden="true"></span>
+              </div>
+              <h3 class="font-display font-extrabold text-ink text-[1.05rem] tracking-tight leading-snug" set:html={s.t}></h3>
+              <p class="text-[0.95rem] leading-[1.55] text-ink-soft text-pretty" set:html={s.b}></p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 9 · ABOUT MATT                                       -->
+    <!-- ============================================================ -->
+    <section class="section bg-paper">
+      <div class="container-page">
+        <div class="grid gap-10 md:gap-14 md:grid-cols-[1fr_minmax(0,18rem)] items-start">
+          <div class="max-w-3xl">
+            <h2 class="headline text-balance text-[2.5rem] sm:text-[3.25rem] md:text-[4rem] mb-8">
+              About <span class="headline-coral">me.</span>
+            </h2>
+            <div class="space-y-5 text-[1.0625rem] sm:text-[1.125rem] leading-[1.65] text-ink-soft text-pretty">
+              <p>I&rsquo;m Matt Howells. I&rsquo;ve been in private medical insurance for twelve years, building my own brokerage for the last six. £1.6m in commissions, fifty-plus active partners, zero spent on cold outreach.</p>
+              <p>The starting point was an accountant introducing me to George, a general insurance broker who showed me how trust-leverage actually worked at a commercial level. Everything taught in The Referral Programme is built on that foundation, refined across a decade of practice in one of the most regulated, cynical, fee-allergic markets in the UK. The programme is a substitute for the luck of meeting George at the right moment, built so that anyone running a trust-based service business can engineer the same engine, in their own market, on purpose.</p>
+            </div>
+          </div>
+
+          <!-- Photo placeholder. Drop a real headshot in /public and replace this block with an <img src="/matt.jpg" ... /> -->
+          <div class="relative aspect-[4/5] rounded-3xl bg-cream overflow-hidden shadow-[0_22px_36px_-28px_rgba(80,60,20,0.25)]">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="font-serif text-[5.5rem] leading-none text-cream-quote/80 select-none" style="color: var(--color-cream-quote);">MH</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+              <span class="font-display text-xs uppercase tracking-[0.18em]" style="color: var(--color-cream-quote);">Matt Howells</span>
+              <span class="dot-trio" aria-hidden="true">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 10 · FAQ  [PHASE_B_FAQ marker]                       -->
+    <!-- ============================================================ -->
+    <section class="section bg-tile">
+      <div class="container-page">
+        <div class="container-narrow">
+          <h2 class="headline text-balance text-[2.5rem] sm:text-[3.25rem] md:text-[4rem] mb-10">
+            Common <span class="headline-coral">questions.</span>
+          </h2>
+          <div class="bg-paper rounded-3xl border border-ink/5 px-6 md:px-9">
+            {[
+              { q: "Is this just networking?", a: "No. Networking is generic and unstructured; you turn up to a room and hope. The Referral Engine is engineered. Specific people, specific positions, specific commercial arrangements, specific behaviours. The opposite of networking." },
+              { q: "I don’t have a big network. Will this work for me?", a: "Yes. The programme is built around starting from zero with the right framework. The Referral Engine is about engineering relationships you don’t have yet, not exploiting ones you do." },
+              { q: "Can I do the programme alongside running my business?", a: "Yes; that’s the design assumption. Sixty to ninety hours across twelve weeks works out at roughly five to seven hours per week. Members are expected to be running active businesses through the programme, not stepping out of them." },
+              { q: "What happens after the twelve weeks?", a: "You keep lifetime access to all programme materials and your Notion operating system. The cohort community continues as The Operator Network, a monthly-subscription community of programme alumni actively building referral partnerships in their respective markets. The cross-vertical design means many of your future referral partners will come from inside the Network. Your first month in the Network is included in the cohort fee; from month two onwards it’s an optional ongoing subscription. Subscription pricing is covered on the qualification call." },
+              { q: "Are there income guarantees?", a: "No. Anyone offering you a guaranteed income from a programme like this is either lying or hasn’t thought about it carefully. What’s guaranteed is the method, the proof behind it, and the work we do together. The outcomes are yours to build." },
+              { q: "What’s the price?", a: "Covered on the qualification call. The programme is application-gated, and the conversation is the right place for that question, not the marketing page." },
+              { q: "What does joining the waiting list actually do?", a: "It puts you on the list to receive a direct application link the moment applications open on 2 June 2026. Waitlist members get first access ahead of public traffic, which matters because Cohort 1 is capped at twelve places. Joining the list doesn’t commit you to anything beyond your interest." },
+            ].map((item) => (
+              <div class="faq-item">
+                <h3 class="font-display font-extrabold text-ink text-[1.125rem] sm:text-[1.2rem] tracking-tight mb-3 flex items-start gap-3">
+                  <span class="dot mt-3 flex-shrink-0" aria-hidden="true"></span>
+                  <span set:html={item.q}></span>
+                </h3>
+                <p class="text-[1rem] leading-[1.65] text-ink-soft text-pretty pl-6" set:html={item.a}></p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 11 · FINAL CTA  [PHASE_B_FINAL_CTA marker]           -->
+    <!-- ============================================================ -->
+    <section class="relative overflow-hidden">
+      <div class="bg-coral text-paper">
+        <div class="container-page px-5 md:px-8 py-20 md:py-28 relative">
+          <div class="absolute -top-20 -right-16 w-[22rem] h-[22rem] rounded-full bg-amber/30 blur-3xl pointer-events-none" aria-hidden="true"></div>
+          <div class="relative max-w-3xl">
+            <span class="dot-trio mb-7" aria-hidden="true">
+              <span class="dot bg-paper" style="background: #fff;"></span>
+              <span class="dot" style="background: var(--color-amber);"></span>
+              <span class="dot" style="background: var(--color-teal);"></span>
+            </span>
+            <h2 class="text-balance font-display font-extrabold text-paper text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] tracking-[-0.035em] leading-[0.98] mb-6">
+              Cohort 1. Twelve places. <span style="color: #FFE2A6;">Get on the list.</span>
+            </h2>
+            <p class="text-[1.125rem] sm:text-[1.25rem] leading-[1.55] text-paper/90 max-w-2xl mb-9 text-pretty">
+              Twelve weeks. The Referral Engine, taught from twelve years of practice. Applications open 2 June 2026; the waiting list gets first access.
+            </p>
+            <a href={FORM_URL} class="cta-pill cta-pill-inverse">
+              {CTA_TEXT}
+              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <p class="mt-6 text-sm text-paper/80">
+              Applications open 2 June 2026 · Cohort 1 capped at 12 places · Waiting list gets first access
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER                                                       -->
+  <!-- ============================================================ -->
+  <footer class="bg-ink text-paper/85">
+    <div class="container-page px-5 md:px-8 py-12 md:py-14">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="flex items-center gap-2.5">
+          <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="13" fill="#FF5C3A" />
+            <circle cx="16" cy="16" r="5" fill="#1A1D29" />
+            <circle cx="25" cy="9" r="3.5" fill="#FFB547" />
+          </svg>
+          <span class="font-display font-extrabold text-paper text-[1rem] tracking-tight">
+            The Operator Edge<span class="text-coral">.</span>
+          </span>
+        </div>
+        <p class="text-sm text-paper/60">
+          &copy; {new Date().getFullYear()} The Operator Edge. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+</Layout>
