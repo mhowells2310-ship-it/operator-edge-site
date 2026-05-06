@@ -6,14 +6,22 @@ import Layout from "../layouts/Layout.astro";
 // On 2 June 2026 the page flips from waitlist mode (PHASE A)
 // to application mode (PHASE B). Edit the three constants below
 // and redeploy. Then complete the manual edits listed underneath.
+//
+// FORM_URL is the GHL embed widget URL. The form ID is the last
+// path segment (used for the iframe id and data-form-id attributes,
+// which the GHL form_embed.js script needs to wire up auto-resize).
+// All "join the waitlist" buttons anchor-scroll to #waitlist where
+// the form is embedded inline.
 // =====================================================================
 
-const FORM_URL = "https://[GHL-WAITLIST-FORM-URL]";
+const FORM_URL = "https://api.leadconnectorhq.com/widget/form/E4MifGR2pkmg5HWArXwH";
 const CTA_TEXT = "Join the Cohort 1 waiting list";
 const HERO_EYEBROW = "COHORT 1 · APPLICATIONS OPEN 2 JUNE 2026";
 
+const formId = FORM_URL.split("/").pop() ?? "";
+
 // 2 JUNE 2026 SWAP VALUES (replace the three constants above):
-//   const FORM_URL = "https://[GHL-APPLICATION-FORM-URL]";
+//   const FORM_URL = "https://api.leadconnectorhq.com/widget/form/[APPLICATION-FORM-ID]";
 //   const CTA_TEXT = "Apply for Cohort 1";
 //   const HERO_EYEBROW = "COHORT 1 · APPLICATIONS NOW OPEN";
 //
@@ -52,7 +60,7 @@ const HERO_EYEBROW = "COHORT 1 · APPLICATIONS OPEN 2 JUNE 2026";
           The Operator Edge<span class="text-coral">.</span>
         </span>
       </a>
-      <a href={FORM_URL} class="cta-pill hidden sm:inline-flex" style="padding: 0.7rem 1.1rem; font-size: 0.9rem;">
+      <a href="#waitlist" class="cta-pill hidden sm:inline-flex" style="padding: 0.7rem 1.1rem; font-size: 0.9rem;">
         {CTA_TEXT}
         <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -85,7 +93,7 @@ const HERO_EYEBROW = "COHORT 1 · APPLICATIONS OPEN 2 JUNE 2026";
           <p class="text-pretty text-[1.125rem] sm:text-[1.25rem] leading-[1.55] text-ink-soft max-w-2xl mb-9">
             The Referral Programme is a 12-week programme from The Operator Edge that teaches owner-led service businesses how to build a predictable referral pipeline. The Referral Engine behind £1.6m in commissions and 50+ active partners over six years on my own, refined across twelve years of practice, now taught.
           </p>
-          <a href={FORM_URL} class="cta-pill">
+          <a href="#waitlist" class="cta-pill">
             {CTA_TEXT}
             <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -311,6 +319,16 @@ const HERO_EYEBROW = "COHORT 1 · APPLICATIONS OPEN 2 JUNE 2026";
           </figure>
 
         </div>
+
+        <div class="mt-14 md:mt-16 flex flex-col items-center text-center">
+          <a href="#waitlist" class="cta-pill">
+            {CTA_TEXT}
+            <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <p class="mt-4 text-sm text-ink-soft">Cohort 1 capped at 12 places. Waiting list gets first access.</p>
+        </div>
       </div>
     </section>
 
@@ -383,6 +401,16 @@ const HERO_EYEBROW = "COHORT 1 · APPLICATIONS OPEN 2 JUNE 2026";
             </p>
           </div>
         </div>
+
+        <div class="mt-14 md:mt-16 flex flex-col items-center text-center">
+          <a href="#waitlist" class="cta-pill">
+            {CTA_TEXT}
+            <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <p class="mt-4 text-sm text-ink-soft">Cohort 1 capped at 12 places. Waiting list gets first access.</p>
+        </div>
       </div>
     </section>
 
@@ -435,7 +463,6 @@ const HERO_EYEBROW = "COHORT 1 · APPLICATIONS OPEN 2 JUNE 2026";
               <li>Anyone in their first year of self-employment</li>
               <li>Product or e-commerce businesses</li>
               <li>Anyone looking for &ldquo;ten leads a day from cold DMs&rdquo; tactics</li>
-              <li>Direct PMI brokers (conflict of interest with my own market)</li>
             </ul>
           </div>
         </div>
@@ -475,6 +502,16 @@ const HERO_EYEBROW = "COHORT 1 · APPLICATIONS OPEN 2 JUNE 2026";
             </li>
           ))}
         </ol>
+
+        <div class="mt-14 md:mt-16 flex flex-col items-center text-center">
+          <a href="#waitlist" class="cta-pill">
+            {CTA_TEXT}
+            <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <p class="mt-4 text-sm text-ink-soft">Cohort 1 capped at 12 places. Waiting list gets first access.</p>
+        </div>
       </div>
     </section>
 
@@ -494,19 +531,15 @@ const HERO_EYEBROW = "COHORT 1 · APPLICATIONS OPEN 2 JUNE 2026";
             </div>
           </div>
 
-          <!-- Photo placeholder. Drop a real headshot in /public and replace this block with an <img src="/matt.jpg" ... /> -->
-          <div class="relative aspect-[4/5] rounded-3xl bg-cream overflow-hidden shadow-[0_22px_36px_-28px_rgba(80,60,20,0.25)]">
-            <div class="absolute inset-0 flex items-center justify-center">
-              <span class="font-serif text-[5.5rem] leading-none text-cream-quote/80 select-none" style="color: var(--color-cream-quote);">MH</span>
-            </div>
-            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-              <span class="font-display text-xs uppercase tracking-[0.18em]" style="color: var(--color-cream-quote);">Matt Howells</span>
-              <span class="dot-trio" aria-hidden="true">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-              </span>
-            </div>
+          <div class="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_22px_36px_-28px_rgba(0,0,0,0.35)]">
+            <img
+              src="/matt.png"
+              alt="Matt Howells"
+              width="1290"
+              height="853"
+              class="w-full h-full object-cover"
+              style="object-position: 35% center;"
+            />
           </div>
         </div>
       </div>
@@ -547,31 +580,56 @@ const HERO_EYEBROW = "COHORT 1 · APPLICATIONS OPEN 2 JUNE 2026";
     <!-- ============================================================ -->
     <!-- SECTION 11 · FINAL CTA  [PHASE_B_FINAL_CTA marker]           -->
     <!-- ============================================================ -->
-    <section class="relative overflow-hidden">
+    <section id="waitlist" class="relative overflow-hidden scroll-mt-20">
       <div class="bg-coral text-paper">
         <div class="container-page px-5 md:px-8 py-20 md:py-28 relative">
           <div class="absolute -top-20 -right-16 w-[22rem] h-[22rem] rounded-full bg-amber/30 blur-3xl pointer-events-none" aria-hidden="true"></div>
-          <div class="relative max-w-3xl">
-            <span class="dot-trio mb-7" aria-hidden="true">
-              <span class="dot bg-paper" style="background: #fff;"></span>
-              <span class="dot" style="background: var(--color-amber);"></span>
-              <span class="dot" style="background: var(--color-teal);"></span>
-            </span>
-            <h2 class="text-balance font-display font-extrabold text-paper text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] tracking-[-0.035em] leading-[0.98] mb-6">
-              Cohort 1. Twelve places. <span style="color: #FFE2A6;">Get on the list.</span>
-            </h2>
-            <p class="text-[1.125rem] sm:text-[1.25rem] leading-[1.55] text-paper/90 max-w-2xl mb-9 text-pretty">
-              Twelve weeks. The Referral Engine, taught from twelve years of practice. Applications open 2 June 2026; the waiting list gets first access.
-            </p>
-            <a href={FORM_URL} class="cta-pill cta-pill-inverse">
-              {CTA_TEXT}
-              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <p class="mt-6 text-sm text-paper/80">
-              Applications open 2 June 2026 · Cohort 1 capped at 12 places · Waiting list gets first access
-            </p>
+          <div class="relative grid gap-10 md:gap-14 lg:grid-cols-[1fr_minmax(0,28rem)] items-start">
+            <div class="max-w-2xl">
+              <span class="dot-trio mb-7" aria-hidden="true">
+                <span class="dot bg-paper" style="background: #fff;"></span>
+                <span class="dot" style="background: var(--color-amber);"></span>
+                <span class="dot" style="background: var(--color-teal);"></span>
+              </span>
+              <h2 class="text-balance font-display font-extrabold text-paper text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] tracking-[-0.035em] leading-[0.98] mb-6">
+                Cohort 1. Twelve places. <span style="color: #FFE2A6;">Get on the list.</span>
+              </h2>
+              <p class="text-[1.125rem] sm:text-[1.25rem] leading-[1.55] text-paper/90 max-w-2xl mb-6 text-pretty">
+                Twelve weeks. The Referral Engine, taught from twelve years of practice. Applications open 2 June 2026; the waiting list gets first access.
+              </p>
+              <p class="text-sm text-paper/80">
+                Applications open 2 June 2026 · Cohort 1 capped at 12 places · Waiting list gets first access
+              </p>
+            </div>
+
+            <div class="bg-paper text-ink rounded-3xl p-2 sm:p-3 shadow-[0_28px_60px_-24px_rgba(0,0,0,0.35)] relative overflow-hidden">
+              <div class="form-loading absolute inset-0 flex flex-col items-center justify-center gap-4 pointer-events-none transition-opacity duration-300" aria-hidden="true">
+                <span class="dot-trio">
+                  <span class="dot form-dot-pulse"></span>
+                  <span class="dot form-dot-pulse" style="animation-delay: 160ms; background: var(--color-amber);"></span>
+                  <span class="dot form-dot-pulse" style="animation-delay: 320ms; background: var(--color-teal);"></span>
+                </span>
+                <span class="text-xs text-ink-soft tracking-[0.18em] uppercase font-medium">Loading the waitlist form</span>
+              </div>
+              <iframe
+                src={FORM_URL}
+                id={`inline-${formId}`}
+                title={CTA_TEXT}
+                data-layout={`{'id':'INLINE'}`}
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name={CTA_TEXT}
+                data-height="560"
+                data-layout-iframe-style="background-color:transparent;border:0"
+                data-form-id={formId}
+                style="width:100%; height:560px; border:none; border-radius:1.25rem; display:block; background:transparent; position:relative; z-index:1;"
+                onload="this.parentElement.querySelector('.form-loading')?.style.setProperty('opacity','0');"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

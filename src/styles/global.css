@@ -28,6 +28,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -280,3 +281,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-balance { text-wrap: balance; }
 .text-pretty { text-wrap: pretty; }
+
+@keyframes form-dot-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.85); }
+  50%      { opacity: 1;    transform: scale(1.1); }
+}
+.form-dot-pulse {
+  animation: form-dot-pulse 1.1s ease-in-out infinite;
+}
