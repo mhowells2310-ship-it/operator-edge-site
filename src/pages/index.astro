@@ -43,6 +43,9 @@ const formId = FORM_URL.split("/").pop() ?? "";
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <link rel="preload" href={FORM_URL} as="document" crossorigin />
+  </Fragment>
   <!-- ============================================================ -->
   <!-- HEADER                                                       -->
   <!-- ============================================================ -->
@@ -281,39 +284,47 @@ const formId = FORM_URL.split("/").pop() ?? "";
         <div class="max-w-[58rem] mx-auto grid gap-6 md:gap-7 md:grid-cols-2">
 
           <!-- Testimonial 1 -->
-          <figure class="card-cream">
-            <span class="quote-mark text-[5rem] block leading-none mb-1" aria-hidden="true">&ldquo;</span>
+          <figure class="testimonial-card">
+            <div class="flex items-start justify-between mb-4">
+              <span class="testimonial-quote" aria-hidden="true">&ldquo;</span>
+              <span class="dot-trio mt-3" aria-hidden="true">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </span>
+            </div>
             <blockquote class="testimonial-body">
               <p>Matt is our go-to for all our own and our clients&rsquo; private medical needs. Over my career I have worked with numerous private medical experts, but Matt&rsquo;s knowledge of products and the market is unrivalled.</p>
               <p>Above all, I feel 100% confident recommending our clients to Matt because his honesty and integrity shine through in abundance, and he always has the client&rsquo;s best interests as his number one priority.</p>
             </blockquote>
-            <div class="text-right -mt-2">
-              <span class="quote-mark text-[5rem] inline-block leading-none" aria-hidden="true">&rdquo;</span>
-            </div>
-            <div class="attr-divider"></div>
+            <div class="testimonial-divider"></div>
             <figcaption class="flex items-center gap-3.5">
-              <span class="attr-avatar">RC</span>
+              <span class="testimonial-avatar">RC</span>
               <span>
-                <span class="block attr-name">Robert C.</span>
-                <span class="block attr-role">Director, Head of Growth / Chartered Financial Planner</span>
+                <span class="block testimonial-name">Robert C.</span>
+                <span class="block testimonial-role">Director, Head of Growth / Chartered Financial Planner</span>
               </span>
             </figcaption>
           </figure>
 
           <!-- Testimonial 2 -->
-          <figure class="card-cream">
-            <span class="quote-mark text-[5rem] block leading-none mb-1" aria-hidden="true">&ldquo;</span>
+          <figure class="testimonial-card">
+            <div class="flex items-start justify-between mb-4">
+              <span class="testimonial-quote" aria-hidden="true">&ldquo;</span>
+              <span class="dot-trio mt-3" aria-hidden="true">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </span>
+            </div>
             <blockquote class="testimonial-body">
               <p>At annabel, it&rsquo;s essential that we only refer our clients to third parties we trust implicitly, those who offer a highly personal, practical and cost-conscious service. Healthcare cover can often feel complex and overwhelming, but Matt Howells and his team at Vizion consistently go above and beyond to make the process clear and manageable. Matt has been a preferred supplier of annabel for over 10 years, and his expertise, responsiveness and genuine care mean our clients always feel informed, supported and, most importantly, appropriately insured.</p>
             </blockquote>
-            <div class="text-right -mt-2">
-              <span class="quote-mark text-[5rem] inline-block leading-none" aria-hidden="true">&rdquo;</span>
-            </div>
-            <div class="attr-divider"></div>
+            <div class="testimonial-divider"></div>
             <figcaption class="flex items-center gap-3.5">
-              <span class="attr-avatar">AB</span>
+              <span class="testimonial-avatar">AB</span>
               <span>
-                <span class="block attr-name">Annabel B.</span>
+                <span class="block testimonial-name">Annabel B.</span>
               </span>
             </figcaption>
           </figure>
@@ -627,6 +638,7 @@ const formId = FORM_URL.split("/").pop() ?? "";
                 data-layout-iframe-style="background-color:transparent;border:0"
                 data-form-id={formId}
                 style="width:100%; height:560px; border:none; border-radius:1.25rem; display:block; background:transparent; position:relative; z-index:1;"
+                fetchpriority="high"
                 onload="this.parentElement.querySelector('.form-loading')?.style.setProperty('opacity','0');"
               ></iframe>
             </div>
